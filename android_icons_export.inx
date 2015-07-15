@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Android Icons Export</_name>
+    <id>com.kokufu.inkscape.android_icons_export</id>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="output_png" type="string" _gui-text="Output png file name:">icon_launcher.png</param>
+    <param name="output_png_width" type="int" min="1" max="100000" _gui-text="Output icon width for mdpi (px)">48</param>
+    <param name="output_png_height" type="int" min="1" max="100000" _gui-text="Output icon height for mdpi (px)">48</param>
+    <param name="dir" type="string" _gui-text="Directory path to export:"></param>
+    <param name="create_dir" type="boolean" _gui-text="Create directory, if it does not exists">true</param>
+    <param name="dir_prefix" type="string" _gui-text="Export Directory prefix">drawable-</param>
+    <param name="density_description" type="description">Select densities to export</param>
+    <param name="ldpi" type="boolean" _gui-text="ldpi (x0.5)">false</param>
+    <param name="mdpi" type="boolean" _gui-text="mdpi (x1)">true</param>
+	  <param name="hdpi" type="boolean" _gui-text="hdpi (x1.5)">true</param>
+	  <param name="xhdpi" type="boolean" _gui-text="xhdpi (x2)">true</param>
+	  <param name="xxhdpi" type="boolean" _gui-text="xxhdpi (x3)">true</param>
+	  <param name="xxxhdpi" type="boolean" _gui-text="xxxhdpi (x4)">true</param>
+    <effect needs-live-preview="false">
+      <object-type>all</object-type>
+      <effects-menu>
+          <submenu _name="Export" />
+      </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">android_icons_export.py</command>
+    </script>
+</inkscape-extension>
